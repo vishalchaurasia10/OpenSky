@@ -1,29 +1,22 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.8;
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract MyNFT is ERC721, Ownable {
-    // constructor() ERC721("MyNFT", "MTK") {}
+contract NFT is ERC721URIStorage, Ownable {
+    uint256 private _tokenIdCounter;
 
-    // function safeMint(address to, uint256 tokenId) public onlyOwner {
-    //     _safeMint(to, tokenId);
+    constructor() ERC721("PDFToken", "PDF") {}
 
+    function mintPDFToken(
+        address recipient,
+        string memory metadataURI
+    ) public onlyOwner returns (uint256) {
+        _tokenIdCounter = _tokenIdCounter + 1;
+        _mint(recipient, _tokenIdCounter);
+        _setTokenURI(_tokenIdCounter, metadataURI);
 
-    mapping(uint256 => address) private customApprovals;
-
-    constructor() ERC721("MyNFT", "MNFT") {}
-
-    function getCustomApproved(uint256 _tokenId) external view returns (address) {
-        return customApprovals[_tokenId];
-    }
-
-    function approveCustomTransfer(address _approved, uint256 _tokenId) external {
-        customApprovals[_tokenId] = _approved;
-    }
-    
-    function safeMint(address to, uint256 tokenId) public onlyOwner {
-        _safeMint(to, tokenId);
+        return _tokenIdCounter;
     }
 }

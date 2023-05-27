@@ -18,7 +18,11 @@ contract Upload {
     mapping(address => Access[]) private accessList;
     mapping(address => mapping(address => bool)) private previousData;
 
-    function add(address _user, string memory _url, string memory _format) external {
+    function add(
+        address _user,
+        string memory _url,
+        string memory _format
+    ) external {
         files[_user].push(File(_url, _format));
     }
 
@@ -47,7 +51,10 @@ contract Upload {
     }
 
     function display(address _user) external view returns (File[] memory) {
-        require(_user == msg.sender || ownership[_user][msg.sender], "You can't see");
+        require(
+            _user == msg.sender || ownership[_user][msg.sender],
+            "You can't see"
+        );
         return files[_user];
     }
 
