@@ -79,6 +79,7 @@ const FileUpload = () => {
                             type="file"
                             id="file-upload"
                             name="data"
+                            onChange={retrieveFile}
                         />
                         <label htmlFor="file-upload">
                             <span>Image : {fileName}</span>
@@ -97,6 +98,7 @@ const FileUpload = () => {
                             <input required className={`outline-none transition-all duration-300 border-slate-400 drop-shadow-sm border-2 rounded-xl p-4`} type="time" name="time" id="time" />
                             <motion.button
                                 disabled={!file}
+                                onclick={handleSubmit}
                                 whileHover={{ y: -3, scale: 1.05, boxShadow: '0 0 10px rgba(255,255,255,0.3)' }}
                                 className={`overflow-hidden text-white hover:text-white border border-[rgba(255,255,255,0.4)] before:block before:absolute before:-inset-3 before:skew-x-[30deg] relative inline-block before:bg-gradient-to-r from-[#6600FF] to-[#00CC99] py-2 px-4 mx-1 rounded-md before:transition-all before:duration-500`}>
                                 <span className={`relative font-roboto text-lg transition-all duration-500`}>Upload</span>
