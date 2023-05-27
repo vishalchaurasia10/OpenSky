@@ -63,15 +63,15 @@ const NavBar = () => {
                 <div className="center hidden lg:block">
                     <ul className='flex items-center justify-center space-x-8 text-xl'>
 
-                        <li className={`hover:bg-[rgba(255,255,255,0.2)] ${location.pathname === '/' ? 'bg-[rgba(255,255,255,0.2)]' : ''} p-1 px-4 rounded-md transition-all duration-300 cursor-pointer`}>
+                        <li className={`hover:bg-[rgba(255,255,255,0.2)] ${location.pathname === '/' ? 'bg-[rgba(255,255,255,0.2)]' : ''} p-1 pb-2 px-4 rounded-md transition-all duration-300 cursor-pointer`}>
                             <Link to="/">Home</Link>
                         </li>
 
-                        <li className={`hover:bg-[rgba(255,255,255,0.2)] ${location.pathname === '/gallery' ? 'bg-[rgba(255,255,255,0.2)]' : ''} p-1 px-4 rounded-md transition-all duration-300 cursor-pointer`}>
+                        <li className={`hover:bg-[rgba(255,255,255,0.2)] ${location.pathname === '/gallery' ? 'bg-[rgba(255,255,255,0.2)]' : ''} p-1 pb-2 px-4 rounded-md transition-all duration-300 cursor-pointer`}>
                             <Link to="/gallery">Gallery</Link>
                         </li>
 
-                        <li className={`hover:bg-[rgba(255,255,255,0.2)] ${location.pathname === '/mint_as_nft' ? 'bg-[rgba(255,255,255,0.2)]' : ''} p-1 px-4 rounded-md transition-all duration-300 cursor-pointer`}>
+                        <li className={`hover:bg-[rgba(255,255,255,0.2)] ${location.pathname === '/mint_as_nft' ? 'bg-[rgba(255,255,255,0.2)]' : ''} p-1 pb-2 px-4 rounded-md transition-all duration-300 cursor-pointer`}>
                             <Link to="/mint_as_nft">Upload</Link>
                         </li>
 

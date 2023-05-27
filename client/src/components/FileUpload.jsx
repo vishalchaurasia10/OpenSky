@@ -10,9 +10,8 @@ const FileUpload = () => {
     const [file, setFile] = useState(null);
     const [fileName, setFileName] = useState("No image selected");
     // const [fileType, setFileType] = useState(".img");
-    const { contract, setContract } = useContext(contractContext);
-    const { account, setAccount } = useContext(accountContext);
-    const { provider, setProvider } = useContext(providerContext);
+    const { contract } = useContext(contractContext);
+    const { account } = useContext(accountContext);
     const { fileType, setFileType } = useContext(typeContext);
 
     const handleSubmit = async (e) => {
@@ -86,30 +85,17 @@ const FileUpload = () => {
                         />
                         <label htmlFor="file-upload">
                             <span>Image: {fileName}</span>
-                            <img
-                                className="rounded-2xl h-full"
-                                src="https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510_1280.jpg"
-                                alt="uploadedImage"
-                            />
                         </label>
                     </div>
                     <div className="form p-6 lg:p-0 lg:w-1/2">
                         <h1 className="text-2xl font-bold font-jost">
-                            <span className="ml-2 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-[#6600FF] relative inline-block">
+                            <span className="ml-2 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block">
                                 <span className="relative text-white text-6xl font-bold">
                                     Upload
                                 </span>
                             </span>
                         </h1>
                         <form className="flex pt-8 pb-5 space-y-6 flex-col">
-                            <input
-                                required
-                                className="outline-none transition-all duration-300 border-slate-400 drop-shadow-sm border-2 rounded-xl p-4"
-                                type="text"
-                                placeholder="Add description to the image"
-                                name="description"
-                                id="description"
-                            />
                             <select
                                 className="w-1/2"
                                 value={fileType}
