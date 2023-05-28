@@ -135,15 +135,16 @@ const Button = (props) => {
                 </div>
             </div>
             <div className={`transition-all lg:left-1/4 lg:w-1/2 duration-500 ${details ? 'top-20' : 'top-[-45rem]'} fixed w-full z-40`}>
-                <div className='createNote bg-[rgba(255,255,255,0.1)] text-white bg-[url("/src/assets/notesBackground.svg)] bg-no-repeat bg-cover bg-center flex flex-col mr-4 lg:mx-16 rounded-xl space-y-8 p-8 backdrop-blur-2xl shadow-2xl border-[rgba(255,255,255,0.1)]'>
+                <div className='createNote bg-[rgba(255,255,255,0.1)] text-white bg-[url("/src/assets/notesBackground.svg)] bg-no-repeat bg-cover bg-center flex flex-col mr-[17px] lg:mr-4 lg:mx-16 rounded-xl space-y-8 py-8 lg:p-8 backdrop-blur-2xl shadow-2xl border-[rgba(255,255,255,0.1)]'>
                     <div>
                         <FontAwesomeIcon onClick={toggleDeatilsModal} className='absolute w-4 h-4 m-2 rounded-md px-2 py-2 bg-[rgba(255,255,255,0.2)] top-0 right-0' icon={faXmark} />
                     </div>
                     <div className="shareholders">
+                        <h1 className='text-4xl mb-4'>Shareholders</h1>
                         {shareholders.length > 0 && shareholders.map((shareholder, index) => {
                             return (
-                                <div className="shareholder flex space-x-4" key={index}>
-                                    <div className="shareholderAddress">{shareholder.shareholder} </div>
+                                <div className="shareholder" key={index}>
+                                    <div className="pl-4 shareholderAddress">{shareholder.shareholder} </div>
                                     {/* <div className="shareholderPercentage">{hexToDecimal(shareholder.shares.toString())}</div> */}
                                 </div>
                             )
