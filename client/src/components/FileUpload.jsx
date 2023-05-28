@@ -5,6 +5,8 @@ import accountContext from '../context/account/accountContext';
 import providerContext from '../context/provider/providerContext';
 import typeContext from '../context/type/typeContext';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faImage } from '@fortawesome/free-solid-svg-icons';
 
 const FileUpload = () => {
     const [file, setFile] = useState(null);
@@ -70,34 +72,35 @@ const FileUpload = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.5 }}
-                className={`wrapper h-screen py-10 transition-all text-black relative duration-300 px-2 mt-10 lg:-mt-4 `}
+                className={`wrapper flex items-center justify-center h-screen transition-all text-black relative duration-300 px-2 mt-10 `}
             >
                 <div
-                    className={`contact relative transition-all duration-1000  backdrop-blur-3xl z-10 lg:top-24 top-10 lg:flex border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,1)] shadow-2xl shadow-black rounded-2xl m-1 lg:p-8 lg:mx-32`}
+                    className={`contact relative transition-all duration-1000 flex flex-col lg:flex-row lg:items-center justify-center backdrop-blur-3xl z-10 lg:top-24 top-10 lg:flex border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,1)] shadow-2xl shadow-black text-center lg:text-left rounded-2xl py-10 -mt-24 lg:-mt-52 m-1`}
                 >
-                    <div className="details p-4 lg:p-0 lg:pr-7 lg:w-1/2">
+                    <div className="details p-6 lg:p-0 lg:pr-7 lg:w-1/2">
                         <input
-                            className=""
+                            className="hidden"
                             type="file"
                             id="file-upload"
                             name="data"
                             onChange={retrieveFile}
                         />
-                        <label htmlFor="file-upload">
-                            <span>Image: {fileName}</span>
+                        <label htmlFor="file-upload" className='flex flex-col item-center justify-center' >
+                            <FontAwesomeIcon className='w-full h-full cursor-pointer lg:mr-40 lg:-ml-6' icon={faImage} />
+                            <span className='font-jost pl-4 text-lg font-bold'>Image: {fileName}</span>
                         </label>
                     </div>
-                    <div className="form p-6 lg:p-0 lg:w-1/2">
-                        <h1 className="text-2xl font-bold font-jost">
-                            <span className="ml-2 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block">
-                                <span className="relative text-white text-6xl font-bold">
+                    <div className="form pl-6 lg:p-0 lg:w-1/4">
+                        <h1 className="text-2xl -ml-4 mt-2 font-bold font-jost">
+                            {/* <span className="ml-2 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block"> */}
+                                <span className="relative text-black text-6xl font-bold">
                                     Upload
                                 </span>
-                            </span>
+                            {/* </span> */}
                         </h1>
-                        <form className="flex pt-8 pb-5 space-y-6 flex-col">
+                        <form className="flex pt-8 mx-2 mr-6 pb-5 space-y-6 flex-col">
                             <select
-                                className="w-1/2"
+                                className=" border border-black rounded-md pl-2 pr-1 py-2"
                                 value={fileType}
                                 onChange={handleFileTypeChange}
                             >
@@ -113,7 +116,7 @@ const FileUpload = () => {
                                     scale: 1.05,
                                     boxShadow: "0 0 10px rgba(255,255,255,0.3)",
                                 }}
-                                className="overflow-hidden text-white hover:text-white border border-[rgba(255,255,255,0.4)] before:block before:absolute before:-inset-3 before:skew-x-[30deg] relative inline-block before:bg-gradient-to-r from-[#6600FF] to-[#00CC99] py-2 px-4 mx-1 rounded-md before:transition-all before:duration-500"
+                                className="overflow-hidden text-white hover:text-white border border-[rgba(255,255,255,0.4)] before:block before:absolute before:-inset-3 before:skew-x-[30deg] relative inline-block before:bg-gradient-to-r from-pink-500 to-violet-500 py-2 mx-1 rounded-md before:transition-all before:duration-500"
                             >
                                 <span className="relative font-roboto text-lg transition-all duration-500">
                                     Upload

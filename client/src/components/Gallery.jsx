@@ -62,9 +62,9 @@ const Gallery = () => {
             <motion.div
                 initial={{ opacity: 0, y: -100 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2 }}
+                transition={{ delay: 0.5 }}
                 className={`search ${images.length === 0 ? 'h-screen' : ''} pt-32 pb-8 mb-12 text-center`}>
-                <h1 className='text-7xl font-extrabold text-white font-jost'>Clip<span className='text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500'>Surf</span></h1>
+                <h1 className='text-7xl font-extrabold text-white font-jost'>Open<span className='text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500'>Sky</span></h1>
                 <h3 className='text-white text-sm font-light font-jost my-3'>Search for your uploaded images</h3>
                 <div className="input">
                     <FontAwesomeIcon className='relative text-white left-8' icon={faSearch} />

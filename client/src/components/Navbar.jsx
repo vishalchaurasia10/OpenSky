@@ -35,7 +35,7 @@ const NavBar = () => {
                 const signer = provider.getSigner();
                 const address = await signer.getAddress();
                 setAccount(address);
-                let contractAddress = "0x5f5EA51acd7DfDe0664507951762EFe80174E2c6";
+                let contractAddress = "0x7209a5CdFd5C2CbfB0D9C75b1B681CF44bf54088";
                 const contract = new ethers.Contract(contractAddress, Upload.abi, signer);
                 setContract(contract);
                 setProvider(provider);
@@ -58,20 +58,22 @@ const NavBar = () => {
             <motion.nav
                 className='z-20 font-jost shadow-2xl bg-black text-white backdrop-blur-3xl fixed top-0 left-0 right-0 flex justify-between items-center px-5 md:px-10 py-3'>
                 <div className="left">
-                    <Link to="/">MemoriesOnChain</Link>
+                    <Link to='/' >
+                        <h1 className={`logo font-roboto font-extrabold text-3xl`}>Open<span className='text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500'>Sky</span> </h1>
+                    </Link>
                 </div>
                 <div className="center hidden lg:block">
                     <ul className='flex items-center justify-center space-x-8 text-xl'>
 
-                        <li className={`hover:bg-[rgba(255,255,255,0.2)] ${location.pathname === '/' ? 'bg-[rgba(255,255,255,0.2)]' : ''} p-1 pb-2 px-4 rounded-md transition-all duration-300 cursor-pointer`}>
+                        <li className={`hover:bg-[rgba(255,255,255,0.2)] ${location.pathname === '/' ? 'bg-[rgba(255,255,255,0.2)]' : ''} p-1 px-4 rounded-md transition-all duration-300 cursor-pointer`}>
                             <Link to="/">Home</Link>
                         </li>
 
-                        <li className={`hover:bg-[rgba(255,255,255,0.2)] ${location.pathname === '/gallery' ? 'bg-[rgba(255,255,255,0.2)]' : ''} p-1 pb-2 px-4 rounded-md transition-all duration-300 cursor-pointer`}>
+                        <li className={`hover:bg-[rgba(255,255,255,0.2)] ${location.pathname === '/gallery' ? 'bg-[rgba(255,255,255,0.2)]' : ''} p-1 px-4 rounded-md transition-all duration-300 cursor-pointer`}>
                             <Link to="/gallery">Gallery</Link>
                         </li>
 
-                        <li className={`hover:bg-[rgba(255,255,255,0.2)] ${location.pathname === '/mint_as_nft' ? 'bg-[rgba(255,255,255,0.2)]' : ''} p-1 pb-2 px-4 rounded-md transition-all duration-300 cursor-pointer`}>
+                        <li className={`hover:bg-[rgba(255,255,255,0.2)] ${location.pathname === '/mint_as_nft' ? 'bg-[rgba(255,255,255,0.2)]' : ''} p-1 px-4 rounded-md transition-all duration-300 cursor-pointer`}>
                             <Link to="/mint_as_nft">Upload</Link>
                         </li>
 
@@ -93,10 +95,10 @@ const NavBar = () => {
             </motion.nav>
             <div className={`expanded lg:hidden w-full text-white z-[15] h-screen flex items-center justify-center backdrop-blur-3xl fixed top-0 transition-all duration-500 ${navExpand ? '' : 'translate-x-[60rem]'}`}>
                 <ul className={`flex text-2xl space-y-4 flex-col justify-center font-jost text-center items-center`}>
-                    <li className={`logo font-jost my-4 font-extrabold text-5xl`}>Clip<span className='text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500'>Surf</span> </li>
+                    <li className={`logo font-jost my-4 font-extrabold text-5xl`}>Open<span className='text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500'>Sky</span> </li>
                     <li onClick={expandNav} className='cursor-pointer'><Link to='/'>Home</Link></li>
                     <li onClick={expandNav} className='cursor-pointer'><Link to='/gallery'>Gallery</Link></li>
-                    <li onClick={expandNav} className='cursor-pointer'><Link to='/mint_as_nft'>Mint</Link></li>
+                    <li onClick={expandNav} className='cursor-pointer'><Link to='/mint_as_nft'>Upload</Link></li>
                 </ul>
             </div>
         </>
