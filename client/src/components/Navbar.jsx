@@ -24,13 +24,6 @@ const NavBar = () => {
         const provider = window.ethereum ? new ethers.providers.Web3Provider(window.ethereum) : null;
         if (provider) {
             try {
-                // window.ethereum.on("chainChanged", () => {
-                //     window.location.reload();
-                // });
-
-                // window.ethereum.on("accountsChanged", () => {
-                //     window.location.reload();
-                // });
                 await provider.send("eth_requestAccounts", []);
                 const signer = provider.getSigner();
                 const address = await signer.getAddress();
